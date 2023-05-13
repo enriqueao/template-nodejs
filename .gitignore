@@ -1,0 +1,14 @@
+.npm
+node_modules
+npm-debug.log
+
+dist
+
+.DS_Store
+
+.env
+.environment.local
+.environment.tests
+coverage
+junit.xml
+.idea

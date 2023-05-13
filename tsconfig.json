@@ -1,0 +1,57 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "useUnknownInCatchVariables": false,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "types": [ "reflect-metadata" ],
+    "module": "commonjs",
+    "strictNullChecks": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowJs": false,
+    "declaration": true,
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "paths": {
+      "@example-api/controllers": ["src/controllers"],
+      "@example-api/controllers/base-controller": [
+        "src/controllers/base-controller.ts"
+      ],
+      "@example-api/constants": ["src/constants/index.ts"],
+      "@example-api/interfaces": ["src/interfaces/index.ts"],
+      "@example-api/repository/implement": ["src/repository/implement"],
+      "@example-api/repository": ["src/repository"],
+      "@example-api/service": ["src/service"],
+      "@example-api/common": ["src/common"],
+      "@example-api/domain": ["src/domain"],
+      "@example-api/data-access": ["src/data-access"],
+      "@example-api/config/inversify": ["src/config/inversify"],
+      "@example-api/config/symbols": ["src/config/symbols"],
+      "@example-api/config/db": ["src/config/db"],
+      "@example-api/handler-errors": [
+        "src/platform/lib/class/custom-errors/custom-error.ts"
+      ],
+      "@example-api/routes/*": [ "src/routes/*" ],
+      "@example-api/platform/*": [ "src/platform/*" ],
+    }
+  },
+  "exclude": ["node_modules", "dist"],
+  "ts-node": {
+    "files": true
+  },
+  "files": ["environment.d.ts", "src/index.ts"],
+  "references": [
+    {
+      "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
+}
