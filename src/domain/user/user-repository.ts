@@ -1,9 +1,6 @@
-import { IUser } from "./IUser";
+import { User } from "./user";
 
-export interface IUserRepository {
-  create(data: IUser): Promise<IUser>;
-  deleteById(id: number): Promise<any>;
-  updateById(id: number, data: any): Promise<any>;
-  find(data: any): Promise<IUser[]>;
-  findOne(id: number): Promise<IUser>;
+export interface UserRepository {
+  create(data: User): Promise<void>;
+  getUserByUserName(userName: string): Promise<any>;
 }
